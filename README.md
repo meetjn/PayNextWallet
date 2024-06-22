@@ -69,13 +69,12 @@ Next, you can link your Turborepo to your Remote Cache by running the following 
 npx turbo link
 ```
 
-## Useful Links
+# Starting the project locally localhost 3001 only
+Run the following command in the packages/DB folder 
 
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+start the postgres db locally using the docker by running command 
+sudo docker run -e POSTGRES_PASSWORD=mysecret -d -p 5433:5432 postgres
+npx prisma migrate dev
+npx prisma generate
+sudo npx prisma db seed
+sudo npx prisma studio
